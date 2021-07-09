@@ -1,15 +1,11 @@
-let variable = 5; // обьявляем переменную
-variable = 'text'; // приваиваем перемменной значение
 
-let _ ; // lodash
-let $ ; // jQuery
+let value = null;
 
+const test = {
+  value1: undefined,
+  value2: null
+}
 
-// camel case
-let veryLongVariableName = 'good name';  // инициализация перемееной
-
-// console.log(veryLongVariableName);
-
-// консткнта, не может быть изменена
-const value = 'test';
-
+console.log(test.value1);
+console.log(value);
+console.log(test.value3);
