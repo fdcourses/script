@@ -1,6 +1,9 @@
 
-let value = '  ';
+let value1 = 'text';
+let value2 = 'test';
 
-let booleanValue = !!value;
+console.log(value1 > value2);
 
-console.log(booleanValue);
+// >=
+// <
+// <=
