@@ -1,9 +1,7 @@
 
-let value1 = 'text';
-let value2 = 'test';
+let value = 50;
 
-console.log(value1 > value2);
+console.log(value >= 0 && value <= 100);
 
-// >=
-// <
-// <=
+// &&  - И
+// || - ИЛИ
