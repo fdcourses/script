@@ -1,7 +1,6 @@
 
 let value = 50;
-let value2 = 5;
+let value2 = '50';
 
-value **= value2;
+console.log(value === value2);
 
-console.log(value);
