@@ -1,11 +1,4 @@
 
-let value = 0;
+let value = null;
  
-// value++;
-// ++value;
-
-console.log(++value); // 1
-console.log(value++); // 1
-console.log(value); // 2
-
-console.log(--value); // 1
+console.log(typeof value);
