@@ -1,4 +1,6 @@
 
-let value = null;
- 
-console.log(typeof value);
+let value = '  ';
+
+let booleanValue = !!value;
+
+console.log(booleanValue);
