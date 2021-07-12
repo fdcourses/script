@@ -1,6 +1,6 @@
+let x = 1;
 
-let value = 50;
-let value2 = '50';
+x = (x++, 100, 'test', false, x);
 
-console.log(value === value2);
+console.log(x);
 
