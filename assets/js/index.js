@@ -1,7 +1,7 @@
 
 let value = 50;
+let value2 = 5;
 
-console.log(value >= 0 && value <= 100);
+value **= value2;
 
-// &&  - И
-// || - ИЛИ
+console.log(value);
