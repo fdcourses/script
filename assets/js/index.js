@@ -1,18 +1,22 @@
-// const number1 = +prompt('Enter first number');
-// const number2 = +prompt('Enter second number');
-
-
-
-// if(isNaN(number1 - number2)) {
-//   alert('Incorrect data');
-// }
-// else {
-//   const result = number1 + number2;
-  
-//   alert(result);
-// }
-
 // function expression
-const myFirstJSFunc = function() {
-  alert('Hello WORLD');
-}
+const getSumOfTwoNumbers = function (value1, value2) {
+  // debugger;
+
+  if (isNaN(value1 - value2)) {
+    alert("Incorrect data");
+
+    return null;
+  } else {
+    const result = value1 + value2;
+
+    alert(result);
+
+    return result;
+
+    alert(result);
+  }
+};
+
+const result = getSumOfTwoNumbers("test", 15);
+
+console.log(result);
