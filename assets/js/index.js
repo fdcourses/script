@@ -1,6 +1,3 @@
-let x = 1;
+const myName = prompt('Enter your name:'); 
 
-x = (x++, 100, 'test', false, x);
-
-console.log(x);
-
+alert('Hello ' + myName);
