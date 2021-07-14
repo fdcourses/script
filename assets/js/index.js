@@ -35,7 +35,7 @@ const getMinNumber = function (num1, num2) {
 
 // Найти максимальное число из 2
 const getMaxNumber = function (num1, num2) {
-  if (isNaN(num1) || isNaN(num2) ) {
+  if (isNaN(num1) || isNaN(num2)) {
     return null;
   }
 
@@ -57,31 +57,24 @@ const isEven = function (number) {
   // return false;
 
   return number % 2 === 0;
-}
+};
 
 // + С помощью функции решите квадратное уравнение
 
-const solveSquareExpression = function (a,b,c) {
-  if (isNaN(a-b-c)) {
+const solveSquareExpression = function (a, b, c) {
+  if (isNaN(a - b - c)) {
     return null;
   }
 
   const d = b * b - 4 * a * c;
 
-  if(d < 0) {
+  if (d < 0) {
     return NaN;
   }
 
-  if (d === 0) {
-    const x = -b / (2 * a);
-    return [x, x]; // число
-  }
-
-  const dSquareRoot = d ** (1/2);
+  const dSquareRoot = d ** (1 / 2);
 
   const x1 = (-b + dSquareRoot) / (2 * a);
   const x2 = (-b - dSquareRoot) / (2 * a);
-
-  return [x1, x2]; 
-}
-
+  return [x1, x2]; // число
+};
