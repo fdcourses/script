@@ -1,28 +1,25 @@
 
-/*
-  спросите у пользователя пароль 
-  пока он не введет правильный
+// let counter = 0;
 
-  БОНУС ограничте количество попыток до 5
-*/
+// while (true) {
+
+//   alert("while");
+
+//   counter++;
+
+//   if(counter > 2) {
+//     break;
+//   }
+ 
+// }
 
 
+// do {
 
+//   alert("do while");
 
-let tries = 0;
+// } while (false);
 
-while (true) {
-  const userInput = prompt('Vvedite parol');
-
-  tries++;
-
-  if(userInput === CORRECT_PASSWORD) {
-    alert('Vi voshli');
-    break;
-  }
-
-  if(tries >= MAX_TRIES) {
-    alert('Vi ne admin');
-    break;
-  }
+for(let i = 0; i < 5 ; i++) {
+  console.log(i);
 }
