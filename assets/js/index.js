@@ -1,23 +1,16 @@
-// const userName = prompt('Введите имя');
+let counter = 1001;
 
-// if(userName) {
-//   response = 'Привет ' + userName;
-// } else{
-//   response = 'Вы ничего не ввели';
-// }
+while(true) {
+  counter--;
 
-//const response =  userName ? 'Привет ' + userName :'Вы ничего не ввели';
+  if (counter % 2 === 1) {
+    continue; // переходит на новую итерацию
+  }
+  
+  console.log(counter);
 
-// alert( userName ? 'Привет ' + userName :'Вы ничего не ввели');
-
-const userInput = +prompt("Введите число");
-
-if (userInput % 2 === 0) {
-  alert("Четное");
-} else {
-  alert("Нечетное");
+  if(counter < 1) {
+    break;
+  }
 }
 
-userInput % 2 === 0 ? alert("Четное") : alert("Нечетное");
-
-alert(userInput % 2 === 0 ? "Четное" : "Нечетное");
