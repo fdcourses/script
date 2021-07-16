@@ -1,31 +1,53 @@
-
 // Create
-const monitor = {
-  width: '70sm',
-  color: 'black',
-  manufacturer: 'Samsung',
-  isOn: true,
-  price: 500,
-  switchOff: function () {
-    alert('Monitor switched off');
-  }, // метод
-  switchOn: function () {
-    alert('Monitor swithecd on')
-  }
-} // литеральная запись обьекта
+const cat1 = {
+  name: "Оболтус",
+  breed: "Сиамский",
+  age: 5,
+  color: "серый",
+  isMale: true,
+  sleep: function () {
+    return "ZZZ...";
+  },
+};
 
- 
+const cat2 = {
+  name: "Арнольд",
+  breed: "Шотландский вислоухий",
+  age: 2,
+  color: "серый",
+  isMale: false,
+  sleep: function () {
+    return "ZZZ...";
+  },
+};
 
-// Read
-console.log(monitor);
+const cat3 = {
+  name: "Васька",
+  breed: "Дворовой",
+  age: 5,
+  color: "серый",
+  isMale: true,
+  sleep: function () {
+    return "ZZZ...";
+  },
+};
 
-// Upadate
-monitor.isOn = false;
+// function declaration
+function func1() {}
 
+// Функция конструктор котов
+function Cat(name, breed, age, color, isMale) {
+  this.nickname = name;
+  this.breed = breed;
+  this.age = age;
+  this.furColor = color;
+  this.isMale = isMale;
 
-// Delete
-delete monitor.width;
+  this.sleep = function () {
+    return "ZZZ...";
+  };
+  // добавить бег
+}
 
-console.log(monitor.width);
-
-console.log(monitor);
+const constractedCat = new Cat("Петька", "Дворовой", 3, "черный", true);
+const constrCat2 = new Cat('Соня','мейн-кун', 2, 'рыжий', false);
