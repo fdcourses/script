@@ -1,25 +1,24 @@
 
-// let counter = 0;
+const getFactorial = function (number) {
+  if(isNaN(number)) {
+    return null; // одна ошибка
+  }
 
-// while (true) {
+  if(number < 0) {
+    return null; // другая ошибка
+  }
 
-//   alert("while");
+  let result = 1;
+  
+  if(number === 0) {
+    return result;
+  }
+  
 
-//   counter++;
+  for(let i = 1; i <= number; i++) {
+    result = result * i;
+  }
 
-//   if(counter > 2) {
-//     break;
-//   }
- 
-// }
+  return result;
 
-
-// do {
-
-//   alert("do while");
-
-// } while (false);
-
-for(let i = 0; i < 5 ; i++) {
-  console.log(i);
 }
