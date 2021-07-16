@@ -1,24 +1,31 @@
 
-const getFactorial = function (number) {
-  if(isNaN(number)) {
-    return null; // одна ошибка
+// Create
+const monitor = {
+  width: '70sm',
+  color: 'black',
+  manufacturer: 'Samsung',
+  isOn: true,
+  price: 500,
+  switchOff: function () {
+    alert('Monitor switched off');
+  }, // метод
+  switchOn: function () {
+    alert('Monitor swithecd on')
   }
+} // литеральная запись обьекта
 
-  if(number < 0) {
-    return null; // другая ошибка
-  }
+ 
 
-  let result = 1;
-  
-  if(number === 0) {
-    return result;
-  }
-  
+// Read
+console.log(monitor);
 
-  for(let i = 1; i <= number; i++) {
-    result = result * i;
-  }
+// Upadate
+monitor.isOn = false;
 
-  return result;
 
-}
+// Delete
+delete monitor.width;
+
+console.log(monitor.width);
+
+console.log(monitor);
