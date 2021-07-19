@@ -1,53 +1,32 @@
-// Create
-const cat1 = {
-  name: "Оболтус",
-  breed: "Сиамский",
-  age: 5,
-  color: "серый",
-  isMale: true,
-  sleep: function () {
-    return "ZZZ...";
-  },
-};
+/*
+1. Создать функцию - конструктор обьектов пользователей 
+   со следующими свойствами:
+    firstName
+    lastName
+    fullName
+    age
+    isMale
 
-const cat2 = {
-  name: "Арнольд",
-  breed: "Шотландский вислоухий",
-  age: 2,
-  color: "серый",
-  isMale: false,
-  sleep: function () {
-    return "ZZZ...";
-  },
-};
+  + 1) у пользователья есть свойство отвечающее за его деньги 
+        в банке
+     2) свойство от вечающее за его зарплату
+     3) ему можно было начисял ть зарплату 
+*/
 
-const cat3 = {
-  name: "Васька",
-  breed: "Дворовой",
-  age: 5,
-  color: "серый",
-  isMale: true,
-  sleep: function () {
-    return "ZZZ...";
-  },
-};
-
-// function declaration
-function func1() {}
-
-// Функция конструктор котов
-function Cat(name, breed, age, color, isMale) {
-  this.nickname = name;
-  this.breed = breed;
+function User(firstName, lastName, age, isMale, moneyInBank, salary) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.fullName = firstName + ' ' + lastName;
   this.age = age;
-  this.furColor = color;
   this.isMale = isMale;
+  this.moneyInBank = moneyInBank;
+  this.salary = salary;
 
-  this.sleep = function () {
-    return "ZZZ...";
-  };
-  // добавить бег
+  this.getSalary = function (monthNumber) {
+
+    return this.moneyInBank += (this.salary * monthNumber);
+  }
 }
 
-const constractedCat = new Cat("Петька", "Дворовой", 3, "черный", true);
-const constrCat2 = new Cat('Соня','мейн-кун', 2, 'рыжий', false);
+const user1 = new User('Karl', 'Marx', 238, true, 0, 100);
+const user2 = new User('John', 'Rockfeller', 175, true, 10000000, 10000000);
