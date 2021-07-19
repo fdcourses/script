@@ -13,30 +13,32 @@
      3) ему можно было начисял ть зарплату 
 */
 
-function User(firstName, lastName, age, isMale, moneyInBank, salary) {
-  this.firstName = firstName;
-  this.lastName = lastName;
-  this.fullName = `${firstName} ${lastName}`;
-  this.age = age;
-  this.isMale = isMale;
-  this.moneyInBank = moneyInBank;
-  this.salary = salary;
-
-  this.getSalary = function (monthNumber) {
-
-    return this.moneyInBank += (this.salary * monthNumber);
-  }
+const user1 = {
+  firstName: 'Test',
+  lastName: 'Testovich',
+  age: 18,
+  isMale: true
 }
 
-const user1 = new User('Karl', 'Marx', 238, true, 0, 100);
-const user2 = new User('John', 'Rockfeller', 175, true, 10000000, 10000000);
+const user2 = {
+  firstName: 'Null',
+  lastName: 'Nullovna',
+  age: 18,
+  isMale: false
+}
 
-const num1 = +prompt('chislo 1');
-const num2 = +prompt('chislo 2');
+const user3 = {
+  firstName: 'Undefined',
+  lastName: 'Undefinov',
+  age: 18,
+  isMale: true
+}
 
-// alert(num1 + ' + ' + num2 + ' = ' + (num1 + num2));
+// Создайте функцию которая будет здороватся с пользователем
 
-alert(`${num1} + ${num2} = ${num1 + num2}`);
+function sayHello(user) {
+  return `Hello ${user.firstName} ${user.lastName} !`;
+}
 
-
-
+// const gretings1 = ;
+sayHello(user1);
