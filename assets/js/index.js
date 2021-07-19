@@ -16,7 +16,7 @@
 function User(firstName, lastName, age, isMale, moneyInBank, salary) {
   this.firstName = firstName;
   this.lastName = lastName;
-  this.fullName = firstName + ' ' + lastName;
+  this.fullName = `${firstName} ${lastName}`;
   this.age = age;
   this.isMale = isMale;
   this.moneyInBank = moneyInBank;
@@ -30,3 +30,13 @@ function User(firstName, lastName, age, isMale, moneyInBank, salary) {
 
 const user1 = new User('Karl', 'Marx', 238, true, 0, 100);
 const user2 = new User('John', 'Rockfeller', 175, true, 10000000, 10000000);
+
+const num1 = +prompt('chislo 1');
+const num2 = +prompt('chislo 2');
+
+// alert(num1 + ' + ' + num2 + ' = ' + (num1 + num2));
+
+alert(`${num1} + ${num2} = ${num1 + num2}`);
+
+
+
