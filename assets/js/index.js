@@ -13,15 +13,32 @@
      3) ему можно было начисял ть зарплату 
 */
 
-const user1 = {
-  firstName: 'Test',
-  lastName: 'Testovich',
-  age: 18,
+const boss = {
+  firstName: 'Petr',
+  lastName: 'Pertovich',
+  age: 37,
   isMale: true,
   0 : 'secret',
-  'full name': 'Test Testovich'
+  'full name': 'Pert Petrovich',
 }
 
-const value = 'full name';
+const test = 0;
+const newProperty = 'abracadabra 123456789';
 
-console.log(value);
+
+// console.log(boss[test]);
+
+
+function createMultiplicationTable() {
+  const resultingTable = {};
+  
+  for(let i = 1; i < 10; i++) {
+    for(let j = 1; j < 10; j++) {
+      resultingTable[`${i} * ${j} = `] = j * i;
+    }
+  }
+
+  return resultingTable;
+}
+
+createMultiplicationTable();
