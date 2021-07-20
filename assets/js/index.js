@@ -1,12 +1,22 @@
 
+const arr = [];
 
-const tel1 = '1356456453';
-const tel2 = '3543545746';
+// вставляет значения в массив на последнее не знаятое место
+arr.push(1);
+arr.push(3);
+arr.push(2);
+arr.push(true);
+arr.push(false);
 
-const myPhoneNumbers = {
-  1 : '1356456453',
-  0 : '3543545746',
-}
+arr.push('string 6', 'string 5', 'string 4');
 
-const phonesArray = ['1356456453', '3543545746'];
-const phonesArray2 = new Array('1356456453', '3543545746');
+// удаляет последнее значение массива и сохраняет его
+const firstDeleted = arr.pop();
+
+const secondDeleted = arr.pop();
+
+// ================================================
+
+
+
+console.log(arr);
