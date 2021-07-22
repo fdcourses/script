@@ -1,20 +1,38 @@
-function MyArrayProtoProto () {
-  
-}
-
 function MyArrayProto() {
-  this.push = function (element) {
-    // console.log(arguments);
-    this[this.length++] = element;
+
+  this.push = function () {
+    for(let i = 0; i < arguments.length; i++) {
+      this[this.length++] = arguments[i];
+    }
+
     return this.length;
+  }
+  
+  this.pop = function () {
+  
+  }
+  
+  this.shift = function () {
+  
+  }
+  
+  this.unshift = function () {
+    
+  }
+  
+  this.concat = function () {
+    
   }
 }
 
 function MyArray () {
   this.length = 0;
+
 }
 
-MyArray.prototype = new MyArrayProto();
+const myArrProto = new MyArrayProto();
+
+MyArray.prototype = myArrProto;
 
 const myArr = new MyArray();
 const myArr2 = new MyArray();
