@@ -23,6 +23,29 @@ function MyArrayProto() {
   this.concat = function () {
     
   }
+
+  this.some = function (func) {
+    for(let i = 0; i < this.length; i++) {
+      const result = func(this[i], i, this);
+      if(result) {
+        return true;
+      }
+    }
+    
+    return false;
+  }
+
+  this.every = function (func) {
+    for(let i = 0; i < this.length; i++) {
+      const result = func(this[i], i, this);
+      if(!result) {
+        return false;
+      }
+    }
+    
+    return true;
+  }
+  
 }
 
 function MyArray () {
