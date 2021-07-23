@@ -28,11 +28,14 @@ function MyArrayProto() {
 function MyArray () {
   this.length = 0;
 
+  for(let i = 0; i < arguments.length; i++) {
+    this.push(arguments[i]);
+  }
 }
 
 const myArrProto = new MyArrayProto();
 
 MyArray.prototype = myArrProto;
 
-const myArr = new MyArray();
-const myArr2 = new MyArray();
+const myArr = new MyArray(1,2,3,'test');
+// const myArr2 = new MyArray();
