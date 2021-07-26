@@ -1,38 +1,48 @@
+/*
+  cоздать функцию конструктор Phone 
+   у телефона есть такие свойства:%
+    модель
+    производитель
+    цена
+    цвет
+    comments (массив строк)
+    в наличии (boolean)
 
-const myUsers = new MyArray(
-  { firstName: "User1", lastName: "Test", age: 20 },
-  { firstName: "User2", lastName: "Test", age: 13 },
-  { firstName: "User3", lastName: "Test", age: 50 },
-  { firstName: "User4", lastName: "Test", age: 7 },
-  { firstName: "User5", lastName: "Test", age: 45 },
-  { firstName: "User6", lastName: "Test", age: 1 },
-  { firstName: "User7", lastName: "Test", age: 415 }
-);
 
-const arr = [1,2,3,4,5,6];
+    1. Создать массив с 50 телефонами (с разными данными)
+*/
 
-const phones = [
-  { model: '11', brand: "Apple", price: 150000 },
-  {  brand: "motorolla" },
-  {  brand: "Google" },
-  {  brand: "Meizu" },
-  {  brand: "Xiaobao" },
-  { model: 'X', brand: "Apple", price: 15000 },
-  {  brand: "Huawei" },
-  {  brand: "Honor" }
-]
-
-const checkBrand = function(brand, targetBrand) { 
-
-  return brand === targetBrand;
+function Phone (model, manufacturer, price, color, inStock) {
+  this.model = model;
+  this.manufacturer = manufacturer;
+  this.price = price;
+  this.color = color;
+  this.comments = [];
+  this.inStock = inStock;
 }
 
-const callback = function (phone) {
-  return checkBrand(phone.brand, "Apple");
+// const newPhones = [
+//   new Phone ('XZY PRO', "Epic 5G Touch", 99999999, 'black', false),
+// ]
+
+const newPhones = [];
+
+for(let i = 0; i < 50; i++) {
+  newPhones.push(new Phone (
+    `Model ${i}`, 
+    'Panasonic', 
+    getRandomInt(5000, 50000),
+    'black',
+    Math.random() >= 0.5
+  ))
 }
 
-const applePhones = phones.filter(callback);
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; //Максимум не включается, минимум включается
+}
 
-const cheapApplePhones = applePhones.filter(function (phone) {
-  return phone.price <= 20000;
-})
+console.table(newPhones);
+
+// 
