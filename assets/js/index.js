@@ -21,21 +21,7 @@ function Phone (model, manufacturer, price, color, inStock) {
   this.inStock = inStock;
 }
 
-// const newPhones = [
-//   new Phone ('XZY PRO', "Epic 5G Touch", 99999999, 'black', false),
-// ]
 
-const newPhones = [];
-
-for(let i = 0; i < 50; i++) {
-  newPhones.push(new Phone (
-    `Model ${i}`, 
-    'Panasonic', 
-    getRandomInt(5000, 50000),
-    'black',
-    Math.random() >= 0.5
-  ))
-}
 
 function getRandomInt(min, max) {
   min = Math.ceil(min);
@@ -43,6 +29,44 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min; //Максимум не включается, минимум включается
 }
 
-console.table(newPhones);
+function getPhones(amount) {
+  const newPhones = [];
 
-// 
+  for(let i = 0; i < amount; i++) {
+    newPhones.push(new Phone (
+      `Model ${i}`, 
+      'Panasonic', 
+      getRandomInt(5000, 50000),
+      'black',
+      Math.random() >= 0.5
+    ))
+  }
+
+  return newPhones;
+}
+
+const phones = getPhones(50);
+
+console.table(phones);
+
+/*
+  1. Посчитать количество моделей телефонов в 
+      наличии и вывести в консоль 
+
+  1.1* Вывести в консоль для каждого элемента массива 
+  строку следующего вида:
+  '<Производитель> <Модель> со стоимостью <цена> сейчас <в наличии / нет в наличии>'
+
+  2. Получить массив тех телефонов, которые есть в наличии
+
+  3. Получить массив телефонов для праздничной распродажи (черная пятница и т.д) 
+      Всем телефонам которые стоят больше 30000 снизить цену на 30%. 
+      
+  
+// advanced
+
+1. Отсортировать массив телефонов по цене (от дорогих к дешевым)
+
+2. Создать массивы с строками - именами производителей и массив с возможными цветами телефонов. Переделать логику генерируемых телефонов чтобы они получали случайного производителя и цвет из списков
+
+*/
