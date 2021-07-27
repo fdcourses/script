@@ -9,12 +9,12 @@ function sum(a, b) {
   return a + b;
 }
 
-function test() {
-  return this;
+function multiply (a,b) {
+  return a * b;
 }
 
-const test2 = function () {
-  return this;
-}
+function square (number) {
+  const result = multiply(number, number);
 
-const thisFunc = test();
+  return result;
+}
