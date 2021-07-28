@@ -1,37 +1,32 @@
-'use strict';
+"use strict";
+
 // functional expression
 const anotherSum = function (a, b) {
-  return a + b;
-}
+  return this;
+};
 
 // function decrlaration
 function sum(a, b) {
-  return a + b;
+  return this;
 }
 
-function multiply (a,b) {
-  return a * b;
-}
+const arrowSum = (a, b) => {
+  return this;
+};
 
-function square (number) {
-  const result = multiply(number, number);
+const newspaper = {
+  title: "NY Post - Murzilka",
 
-  return result;
-}
+  articles: ["Main news", "Article not main", "test1234", "give more money"],
 
-function highOrderFunction ( callbackFunction, num1, num2 ) {
-  return callbackFunction(num1, num2);
-}
-
-const hofSum = highOrderFunction(function (elem, elem2) {  
-  return elem + elem2;
-}, 5, 5);
-
-function hof () {
-
-  return function() {
-    return true;
-  }
-}
-
-const test = hof();
+  showArticles() {
+    const that = this;
+    this.articles.forEach((article, index, array) => {
+      console.log(
+        `Newspaper ${this.title} | Article №${index + 1} : ${article}`
+      );
+    });
+  },
+};
+// сделатйе следующий вывод для метода showArticles
+// NewsPaper <title> Article №<i>: <article>
