@@ -86,6 +86,16 @@ class Car {
   get name() {
     return this._name;
   }
+
+  static isCar(carInsatace) {
+    return carInsatace instanceof Car;
+  }
 }
+
+
+
+// Car.isCar = function isCar(carInsatace) {
+//   return carInsatace instanceof Car;
+// }
 
 const car = new Car(500, 500, 500, '   dsfds           ');
