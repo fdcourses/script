@@ -7,13 +7,14 @@ class User {
     this.name = name;
     this.lastName = lastName;
     this.age = age;
+    this.isBanned = false;
   }
 
   getFullName() {
     return `${this.name} ${this.lastName}`;
   }
 
-  createMessage(message) {
+  createMessage = function(message) {
     thread.push(message);
     return message;
   }
@@ -42,6 +43,10 @@ class Admin extends Moderator {
     super(name, lastName, age, permissions, email);
 
     this.email = email;
+  }
+
+  ban (user) {
+    user.isBanned = true;
   }
 }
 
