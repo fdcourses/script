@@ -1,101 +1,57 @@
-'use strict';
-/*
-  Создать класс машина
-  У машины будут следующие свойства:
-  вес корпуса,
-  максимальная скорость,
-  текущую скорость, 
-  имя
+"use strict";
 
-  всем этим свойствам задать геттеры и сеттеры
-  осуществить в сеттерах проверки входящих данных 
-  скрость не может ыбть отрицательной
-  вес тоже не отрицательный 
-  имя не может быть пустым
+let thread = [];
 
-*/
-
-class Car {
-  constructor (weight, maxSpeed, currentSpeed, name) {
-    this.weight = weight;
-    this.maxSpeed = maxSpeed;
-    this.currentSpeed = currentSpeed;
+class User {
+  constructor(name, lastName, age) {
     this.name = name;
+    this.lastName = lastName;
+    this.age = age;
   }
 
-  set weight(newWeight) {
-    if(isNaN(newWeight) || typeof newWeight !== 'number') {
-      throw new TypeError('Invalid type');
-    }
-
-    if(newWeight < 0) {
-      throw new RangeError('Weight cant be negative');
-    }
-
-    this._weight = newWeight;
+  getFullName() {
+    return `${this.name} ${this.lastName}`;
   }
 
-  get weight() {
-    return this._weight;
-  }
-
-  set maxSpeed(newSpeed) {
-    if(isNaN(newSpeed) || typeof newSpeed !== 'number') {
-      throw new TypeError('Invalid type');
-    }
-
-    if(newSpeed < 0) {
-      throw new RangeError('Speed cant be negative');
-    }
-
-    this._maxSpeed = newSpeed;
-  }
-
-  get maxSpeed() {
-    return this._maxSpeed;
-  }
-
-  set currentSpeed(newSpeed) {
-    if(isNaN(newSpeed) || typeof newSpeed !== 'number') {
-      throw new TypeError('Invalid type');
-    }
-
-    if(newSpeed < 0) {
-      throw new RangeError('Speed cant be negative');
-    }
-
-    this._currentSpeed = newSpeed;
-  }
-
-  get currentSpeed() {
-    return this._currentSpeed;
-  }
-
-  set name(newName) {
-    if(typeof newName !== 'string') {
-      throw new TypeError('Invalid type');
-    }
-
-    if(newName.trim() === '') {
-      throw new Error('Name must not be empty');
-    }
-
-    this._name = newName.trim();
-  }
-
-  get name() {
-    return this._name;
-  }
-
-  static isCar(carInsatace) {
-    return carInsatace instanceof Car;
+  createMessage(message) {
+    thread.push(message);
+    return message;
   }
 }
 
+class Moderator extends User {
+  constructor(name, lastName, age, permissions) {
+    super(name, lastName, age);
 
+    this.permissions = permissions;
+  }
+  deleteMessage(messageId) {
+    thread.pop();
+  }
 
-// Car.isCar = function isCar(carInsatace) {
-//   return carInsatace instanceof Car;
-// }
+  betterDeleteMessage(messageId) {
+    thread = thread.filter((message, i) => {
+      return messageId !== i;
+    });
+  }
+}
+// создать класс Admin, который наследуется от MOderator
 
-const car = new Car(500, 500, 500, '   dsfds           ');
+class Admin extends Moderator {
+  constructor(name, lastName, age, permissions, email) {
+    super(name, lastName, age, permissions, email);
+
+    this.email = email;
+  }
+}
+
+const u1 = new User("Test", "tsts", 50);
+const m1 = new Moderator("Petr", "Semenovich", 45, { canDeleteMessages: true });
+
+const admin = new Admin(
+  "Feofan",
+  "Semenovich",
+  25,
+  { canDeleteUsers: true, canDeleteMessages: true },
+  "nerazbany@mail.com"
+);
