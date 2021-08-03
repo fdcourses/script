@@ -1,62 +1,40 @@
 "use strict";
 
-let thread = [];
-
-class User {
-  constructor(name, lastName, age) {
+class Figure {
+  constructor(name, secret) {
     this.name = name;
-    this.lastName = lastName;
-    this.age = age;
-    this.isBanned = false;
   }
 
-  getFullName() {
-    return `${this.name} ${this.lastName}`;
-  }
+  getArea() {
 
-  createMessage = function(message) {
-    thread.push(message);
-    return message;
   }
 }
 
-class Moderator extends User {
-  constructor(name, lastName, age, permissions) {
-    super(name, lastName, age);
+class Triangle extends Figure {
+  constructor(a,h) {
+    super('Треугольник');
 
-    this.permissions = permissions;
-  }
-  deleteMessage(messageId) {
-    thread.pop();
+    this.a = a;
+    this.h = h;
   }
 
-  betterDeleteMessage(messageId) {
-    thread = thread.filter((message, i) => {
-      return messageId !== i;
-    });
-  }
-}
-// создать класс Admin, который наследуется от MOderator
-
-class Admin extends Moderator {
-  constructor(name, lastName, age, permissions, email) {
-    super(name, lastName, age, permissions, email);
-
-    this.email = email;
-  }
-
-  ban (user) {
-    user.isBanned = true;
+  getArea () {
+    return this.a * this.h * 0.5;
   }
 }
 
-const u1 = new User("Test", "tsts", 50);
-const m1 = new Moderator("Petr", "Semenovich", 45, { canDeleteMessages: true });
+class Square extends Figure {
+  constructor(a) {
+    super('Квадрат');
 
-const admin = new Admin(
-  "Feofan",
-  "Semenovich",
-  25,
-  { canDeleteUsers: true, canDeleteMessages: true },
-  "nerazbany@mail.com"
-);
+    this.a = a;
+  }
+
+  getArea() {
+    return this.a * this.a;
+  }
+}
+
+const triangle = new Triangle(2,5);
+
+const square = new Square(5);
