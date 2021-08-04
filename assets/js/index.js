@@ -1,12 +1,12 @@
 "use strict";
 
 class Figure {
-  constructor(name, secret) {
+  constructor(name) {
     this.name = name;
   }
 
   getArea() {
-
+    return `здесь была бы площадь если бы мы знали формулу`;
   }
 }
 
@@ -16,6 +16,14 @@ class Triangle extends Figure {
 
     this.a = a;
     this.h = h;
+  }
+
+  set a(value) {
+    this._a = value;
+  }
+
+  get a () {
+    return this._a;
   }
 
   getArea () {
@@ -35,6 +43,18 @@ class Square extends Figure {
   }
 }
 
+function getFigureArea(figure) {
+  if(figure instanceof Figure) {
+    return figure.getArea();
+  }
+
+  throw new TypeError('Это не фигура');
+}
+
+const testFigure = new Figure('Тестовая фигура');
+
 const triangle = new Triangle(2,5);
+
+const t1 = new Triangle (10,8);
 
 const square = new Square(5);
