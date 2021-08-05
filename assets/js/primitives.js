@@ -1,6 +1,6 @@
 "use strict";
 
-const str = "secret test very secret";
+const str = "    secret     test    very     secret";
 const str2 = "Nikolay Petrovich Ovechkin";
 const strObj = new String(str);
 
@@ -30,8 +30,27 @@ function toJadenCase(str) {
     .split(" ")
     .map((word) => word[0].toUpperCase() + word.slice(1))
     .join(" ");
+}
 
+function betterTrim (str) {
+  let result = '';
+  // debugger;
 
+  // for(let i = 0; i <str.length -1; i++ ) {
+  //   if((str[i] === ' ' && str[i+1] !== ' ') || (str[i] !== ' ' && str[i+1] !== ' ') || (str[i] !== ' ' && str[i+1] === ' ')) {
+  //     result += str[i+1];
+  //   }
+  // }
+
+  for(let i = 0; i< str.length; i++) {
+    if(str[i] === " " && str[i+1] === ' ') {
+      continue;
+    }
+
+    result += str[i];
+  }
+
+  return result.trim();
 }
 
 console.log(trimmed);
