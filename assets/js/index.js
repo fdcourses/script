@@ -36,7 +36,7 @@ class Square extends Figure {
 }
 
 function getFigureArea(figure) {
-  if (figure instanceof Figure) {
+  if (figure instanceof Figure) { 
     return figure.getArea();
   }
 
@@ -46,7 +46,7 @@ function getFigureArea(figure) {
 const testFigure = new Figure("Тестовая фигура");
 const triangle = new Triangle(2, 5);
 const t1 = new Triangle(10, 8);
-const square = new Square(5)`${this.name} ${this.lastName}`;
+// const square = new Square(5)`${this.name} ${this.lastName}`;
 
 this.salary * 0.25;
 
