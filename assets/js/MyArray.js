@@ -47,6 +47,6 @@ class MyArray {
 
 const myArr1 = new MyArray(1,2,3,4);
 
-for(const value of myArr1) {
-  console.log(value);
-}
+// for(const value of myArr1) {
+//   console.log(value);
+// }

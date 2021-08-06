@@ -54,7 +54,7 @@ function betterTrim (str) {
   return result.trim();
 }
 
-console.log(trimmed);
+// console.log(trimmed);
 
 /*
 number

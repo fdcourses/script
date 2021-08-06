@@ -1,58 +1,64 @@
 "use strict";
 
-class Figure {
-  constructor(name) {
-    this.name = name;
-  }
+// деструктуризация - особый способ создания переменных
 
-  getArea() {
-    return `здесь была бы площадь если бы мы знали формулу`;
-  }
+const color = "red";
+
+const monitor = {
+  matrix: "Ips",
+  sizes: {
+    width: {
+      value: 50,
+      unit: "cm",
+    },
+    heigth: {
+      value: 20,
+      unit: "cm",
+    },
+  },
+  resolution: {
+    horizontal: {
+      value: 1920,
+      unit: "px",
+    },
+    vertical: {
+      value: 1080,
+      unit: "px",
+    },
+  },
+  color: "black",
+  manufacturer: "Samsung",
+  refreshRate: 60,
+};
+
+const {
+  color: monitorColor,
+  manufacturer,
+  sizes: {
+    width: { value: monitorWidth },
+  },
+  ...restOfMonitor
+} = monitor;
+
+console.log(monitorWidth);
+
+const arr = [-999, 2, 58, 9];
+
+const [first, ...restOfArray] = arr;
+
+function calculateDiagonalOfMonitor({sizes: {width:{value:mW},heigth: {value:mH}}}) 
+{
+  return Math.sqrt(mW ** 2 + mH ** 2);
 }
 
-class Triangle extends Figure {
-  constructor(a, h) {
-    super("Треугольник");
 
-    this.a = a;
-    this.h = h;
-  }
-
-  getArea() {
-    return this.a * this.h * 0.5;
-  }
+const user1 = {
+  name: 'Test',
+  lastName: 'Testovich'
 }
 
-class Square extends Figure {
-  constructor(a) {
-    super("Квадрат");
+function sayHi (user = {name:'Undefined', lastName:'Nullovich'}) {
 
-    this.a = a;
-  }
-
-  getArea() {
-    return this.a * this.a;
-  }
-}
-
-function getFigureArea(figure) {
-  if (figure instanceof Figure) { 
-    return figure.getArea();
-  }
-
-  throw new TypeError("Это не фигура");
-}
-
-const testFigure = new Figure("Тестовая фигура");
-const triangle = new Triangle(2, 5);
-const t1 = new Triangle(10, 8);
-// const square = new Square(5)`${this.name} ${this.lastName}`;
-
-this.salary * 0.25;
-
-function getPremium() {
-  if (this.workingDay > 20) {
-    const bonusPayment = this.salary * this.days * 0.25;
-    return bonusPayment;
-  }
+  const {name, lastName} = user;
+  return `Hello ${name} ${lastName}`
 }
