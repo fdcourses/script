@@ -1,5 +1,7 @@
 "use strict";
 
+const result = Number.isInteger(12.5);
+
 const str = "    secret     test    very     secret";
 const str2 = "Nikolay Petrovich Ovechkin";
 const strObj = new String(str);
@@ -10,10 +12,10 @@ const hasLetter = str.includes("t");
 
 const trimmed = str.trim();
 
-const newStr = str.replace("secret", "null");
+const newStr = str.replace("secret", "!@*^!#*!&%");
 
-const strArr = str2.split("");
-const str2Twin = strArr.join("");
+const strArr = str2.split(" ");
+const str2Twin = strArr.join(", ");
 
 // Hello There My Dear Friends I Wand To Speak With You
 
@@ -25,7 +27,6 @@ function toJadenCase(str) {
   // });
   // const result = wordsWithUpper.join(' ');
   // return result;
-
   return str
     .split(" ")
     .map((word) => word[0].toUpperCase() + word.slice(1))
@@ -54,3 +55,45 @@ function betterTrim (str) {
 }
 
 console.log(trimmed);
+
+/*
+number
+boolean
+undefined
+null
+String
+bigint
+
+symbol
+
+
+-------
+object
+*/
+
+const sym1 = Symbol(); 
+const sym2 = Symbol();
+
+const userFrontId = Symbol('user id for front');
+
+const user = {
+  id: 0,
+  name: 'Feofan',
+  lastName: '123',
+  [userFrontId]: 500
+}
+
+const numberArray = [1,23,4,5,78];
+
+// for(let i = 0; i < arr.length; i++) {
+//   console.log(arr[i]);
+// }
+
+const arrayIterator = numberArray[Symbol.iterator]();
+
+// const t1 = betterTrim();
+
+// for .. of
+// for(let number of numberArray) {
+//  console.log(number);
+// }
